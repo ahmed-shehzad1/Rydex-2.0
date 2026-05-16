@@ -241,9 +241,10 @@ export default function MyRoutes() {
             boxShadow: activeTab === "driving"
               ? "0 8px 20px rgba(26, 122, 82, 0.2)"
               : "0 2px 8px rgba(0,0,0,0.05)",
-            border: activeTab === "driving"
-              ? "2px solid #0f5d3e"
-              : "2px solid #e0f2e0"
+            border:
+  activeTab === "driving"
+    ? "2px solid #0f5d3e"
+    : "2px solid #e0f2e0",
           }}
         >
           <span style={{ marginRight: "8px" }}>🚗</span>
