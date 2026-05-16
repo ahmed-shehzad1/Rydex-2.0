@@ -50,29 +50,41 @@ export default function AddRoute() {
     }
   }
 
-  // --- 1. FETCH & DISPLAY OWN ROUTE ---
-  async function fetchMyRoute() {
-    const config = getAuthHeader();
-    if (!config) return;
-    try {
-      const res = await axios.get(`${API_BASE}/routes/mine/list`, config);
-      if (res.data.owned && res.data.owned.length > 0) {
-          const r = res.data.owned[0];
-          const coords = r.geometry?.coordinates || r.coordinates || [];
-          setMySavedRoute({ ...r, _coords: coords });
+async function fetchMyRoute() {
+  const config = getAuthHeader();
+  if (!config) return;
 
-          if (coords.length > 0) {
-             setViewState({
-                 longitude: coords[0][0],
-                 latitude: coords[0][1],
-                 zoom: 11
-             });
-          }
-      } else {
-          setMySavedRoute(null);
+  try {
+    const res = await axios.get(`${API_BASE}/routes/mine/list`, config);
+
+    if (res.data.owned && res.data.owned.length > 0) {
+      const r = res.data.owned[0];
+
+      const coords = r.geometry?.coordinates || r.coordinates || [];
+
+      // ✅ SAFE NORMALIZATION
+      const safeCoords =
+        Array.isArray(coords) && Array.isArray(coords[0])
+          ? coords
+          : [];
+
+      setMySavedRoute({ ...r, _coords: safeCoords });
+
+      // ✅ SAFE VIEW STATE UPDATE
+      if (safeCoords.length > 0) {
+        setViewState({
+          longitude: safeCoords[0][0],
+          latitude: safeCoords[0][1],
+          zoom: 11
+        });
       }
-    } catch (err) { console.error("Error loading my route:", err); }
+    } else {
+      setMySavedRoute(null);
+    }
+  } catch (err) {
+    console.error("Error loading my route:", err);
   }
+}
 
   // --- 2. CREATE NEW ROUTE LOGIC ---
   async function fetchRouteAndDraw() {
