@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion"; 
 import { MapPin, Shield, Zap, DollarSign, Users, ArrowRight, Star, Search, Car, Calendar, TrendingUp, Leaf, Lock, ChevronRight, Smartphone, Headphones, Award, Globe, BarChart3, Fuel, Smile } from "lucide-react";
-import { getAvatarUrl } from "../utils/avatarHelper";
+import { getAvatarUrl } from "../Utils/avatarHelper";
 import travelVideo from "../components/assets/stock-video 1.mp4";
 export default function Landing() {
   const [activeStep, setActiveStep] = useState(0);
