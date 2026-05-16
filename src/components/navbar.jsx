@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import axios from "axios"; 
-import { getAvatarUrl } from "../utils/avatarHelper";
+import { getAvatarUrl } from "../Utils/avatarHelper";
 import { Menu, X, LogOut, Home } from "lucide-react";
 import "./Navbar.css"; 
 

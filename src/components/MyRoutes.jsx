@@ -229,7 +229,7 @@ export default function MyRoutes() {
           style={{
             padding: "14px 24px",
             borderRadius: "10px",
-            border: "2px solid transparent",
+           
             fontSize: "15px",
             fontWeight: "600",
             cursor: "pointer",
