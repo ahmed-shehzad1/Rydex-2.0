@@ -1,0 +1,205 @@
+/* MyRoutes.css */
+
+.my-routes-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+.routes-header h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.routes-header p {
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+
+/* Tabs */
+.routes-tabs {
+  display: flex;
+  gap: 1rem;
+  border-bottom: 2px solid #e5e7eb;
+  margin-bottom: 2rem;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #6b7280;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s;
+}
+
+.tab-btn:hover {
+  color: #111827;
+}
+
+.tab-btn.active {
+  color: #2563eb;
+  border-bottom-color: #2563eb;
+}
+
+/* Grid Layout */
+.routes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Card Styling */
+.route-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding: 1.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid #f3f4f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.route-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.date-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: #6b7280;
+  background: #f9fafb;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid #e5e7eb;
+}
+
+.status-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.status-badge.active { background: #dbeafe; color: #1e40af; }
+.status-badge.expired { background: #f3f4f6; color: #9ca3af; }
+
+/* Visual Timeline */
+.location-line {
+  display: flex;
+  align-items: center;
+  margin: 15px 0 5px 0;
+}
+.dot { width: 10px; height: 10px; border-radius: 50%; }
+.dot.start { background: #2563eb; }
+.dot.end { background: #ef4444; }
+.line { flex: 1; height: 2px; background: #e5e7eb; margin: 0 10px; }
+
+.endpoints {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.5rem;
+}
+
+/* Passengers Section */
+.passengers-section {
+  background: #f8fafc;
+  padding: 1rem;
+  border-radius: 12px;
+  margin-top: auto;
+}
+
+.passengers-section h4 {
+  font-size: 0.85rem;
+  color: #475569;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pax-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pax-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+.pax-list li:last-child { border-bottom: none; }
+
+.pax-avatar {
+  width: 28px;
+  height: 28px;
+  background: #cbd5e1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #475569;
+}
+
+.pax-details { display: flex; flex-direction: column; }
+.pax-name { font-size: 0.85rem; font-weight: 600; color: #334155; }
+.pax-email { font-size: 0.7rem; color: #94a3b8; }
+
+.leave-btn {
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
+  background-color: white;
+  color: #ef4444;
+  border: 1px solid #ef4444;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.leave-btn:hover {
+  background-color: #fef2f2;
+}
+
+/* Empty State */
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 4rem;
+  background: #f9fafb;
+  border-radius: 16px;
+  color: #6b7280;
+}
+.empty-icon { color: #d1d5db; margin-bottom: 1rem; }

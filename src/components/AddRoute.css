@@ -1,0 +1,231 @@
+/* src/styles/AddRoute.css */
+
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;600;700&display=swap');
+
+:root {
+  /* THEME VARIABLES */
+  --green-dark: #1b4332;
+  --green-main: #2d6a4f;
+  --green-light: #95d5b2;
+  --green-pale: #f2f9f5;
+  --white: #ffffff;
+  --shadow: 0 15px 35px rgba(27, 67, 50, 0.1);
+}
+
+.ar-root {
+  height: 100vh;
+  width: 100%;
+  font-family: 'Lato', sans-serif;
+  background: var(--green-pale);
+  color: var(--green-dark);
+}
+
+.ar-map-wrap {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+
+/* Ensure map canvas fills */
+.mapboxgl-canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* --- CONTROL CARD --- */
+/* src/styles/AddRoute.css */
+
+/* ... (keep imports and root variables the same) ... */
+
+/* --- CONTROL CARD --- */
+.ar-controls {
+  position: absolute;
+  /* CHANGED: Increased top to 100px to clear the Navbar */
+  top: 100px; 
+  left: 20px;
+  width: 320px;
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  z-index: 1200;
+  border: 1px solid rgba(27, 67, 50, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+/* ... (keep everything else the same) ... */
+
+
+/* --- RESPONSIVE --- */
+@media (max-width: 520px) {
+  .ar-controls {
+    /* CHANGED: Adjust for mobile navbar as well */
+    top: 90px; 
+    left: 10px;
+    right: 10px;
+    width: auto;
+    padding: 1rem;
+  }
+  .ar-buttons { 
+    flex-direction: column; 
+  }
+  .value {
+    font-size: 0.8rem;
+  }
+}
+.ar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--green-pale);
+  padding-bottom: 0.5rem;
+}
+
+.ar-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--green-dark);
+}
+
+.ar-actions-top { 
+  display: flex; 
+  gap: 8px; 
+}
+
+/* --- INFO ROWS --- */
+.ar-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.label { 
+  font-size: 0.85rem; 
+  color: #666; 
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.value {
+  background: var(--green-pale);
+  color: var(--green-dark);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border: 1px solid rgba(27, 67, 50, 0.05);
+  font-family: 'Lato', sans-serif;
+}
+
+/* --- BUTTONS --- */
+.ar-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 1.5rem;
+}
+
+.btn {
+  flex: 1;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 700;
+  font-family: 'Lato', sans-serif;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+/* Primary Action (Save/Add) */
+.btn.primary {
+  background: var(--green-dark);
+  color: white;
+  border: 1px solid var(--green-dark);
+  box-shadow: 0 4px 12px rgba(27, 67, 50, 0.2);
+}
+.btn.primary:hover {
+  background: var(--green-main);
+  border-color: var(--green-main);
+  transform: translateY(-2px);
+}
+
+/* Secondary/Small Buttons (Reset) */
+.btn.ar-small {
+  background: transparent;
+  border: 1px solid #ddd;
+  color: #555;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+}
+.btn.ar-small:hover {
+  border-color: var(--green-main);
+  color: var(--green-main);
+  background: var(--green-pale);
+}
+
+/* Success State */
+.btn.success {
+  background: var(--green-main);
+  color: white;
+  border: none;
+  cursor: default;
+}
+
+/* --- META INFO --- */
+.ar-meta {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: #777;
+  text-align: center;
+}
+
+.hint {
+  margin-top: 10px;
+  color: #888;
+  font-size: 0.85rem;
+  font-style: italic;
+  text-align: center;
+}
+
+.saved-info {
+  margin-top: 1rem;
+  background: var(--green-pale);
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid rgba(27, 67, 50, 0.1);
+  text-align: center;
+}
+
+.saved-title { 
+  font-weight: 700; 
+  margin-bottom: 4px; 
+  color: var(--green-dark);
+  font-family: 'Playfair Display', serif;
+}
+
+.saved-id { 
+  font-size: 0.85rem; 
+  color: var(--green-main);
+  font-family: monospace; 
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 520px) {
+  .ar-controls {
+    left: 10px;
+    right: 10px;
+    top: 10px;
+    width: auto; /* Full width on mobile */
+    padding: 1rem;
+  }
+  .ar-buttons { 
+    flex-direction: column; 
+  }
+  .value {
+    font-size: 0.8rem;
+  }
+}
