@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { MessageCircle, Check, X, ArrowRight, Clock, CarFront, User } from "lucide-react"; 
 import { toast } from 'react-toastify';
 import Chat from "../components/Chat"; 
-import { getAvatarUrl } from "../utils/avatarHelper";
+import { getAvatarUrl } from "../Utils/avatarHelper";
 import "../styles/Matches.css";
 
 export default function Matches() {
