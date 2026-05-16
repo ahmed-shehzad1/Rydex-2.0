@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { X, Send, User } from "lucide-react";
-import { getAvatarUrl } from "../utils/avatarHelper"; // ✅ NEW
+import { getAvatarUrl } from "../Utils/avatarHelper"; // ✅ NEW
 
 export default function Chat({ routeId, partnerName, myId, onClose }) {
   const [messages, setMessages] = useState([]);
