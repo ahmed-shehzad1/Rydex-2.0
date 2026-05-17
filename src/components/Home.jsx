@@ -869,45 +869,77 @@ export default function Landing() {
             </Link>
           </motion.div>
 
-          {/* Video Side */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            style={{
-              borderRadius: "20px",
-              overflow: "hidden",
-              boxShadow: "0 30px 60px rgba(5, 150, 105, 0.2)",
-              position: "relative"
-            }}
-          >
-           <video
-  autoPlay
-  loop
-  muted
-  playsInline
+{/* Video Side */}
+<motion.div
+  initial={{ opacity: 0, x: 40 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.8 }}
   style={{
+    borderRadius: "20px",
+    overflow: "hidden",
+    boxShadow: "0 30px 60px rgba(5, 150, 105, 0.2)",
+    position: "relative",
     width: "100%",
-    height: "500px",
-    objectFit: "cover",
-    display: "block"
+    maxWidth: "100%"
   }}
 >
-  <source src={travelVideo} type="video/mp4" />
-</video>
-          </motion.div>
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    style={{
+      width: "100%",
+      height: window.innerWidth <= 768 ? "300px" : "500px",
+      objectFit: "cover",
+      display: "block",
+      borderRadius: "20px"
+    }}
+  >
+    <source src={travelVideo} type="video/mp4" />
+  </video>
+</motion.div>
         </div>
 
         {/* Mobile Responsive */}
-        <style>{`
-          @media (max-width: 768px) {
-            div[style*="gridTemplateColumns: 1fr 1fr"] {
-              grid-template-columns: 1fr !important;
-              gap: 40px !important;
-            }
-          }
-        `}</style>
+       {/* Mobile Responsive */}
+<style>{`
+  @media (max-width: 768px) {
+
+    div[style*="gridTemplateColumns: 1fr 1fr"] {
+      grid-template-columns: 1fr !important;
+      gap: 40px !important;
+    }
+
+    video {
+      height: 280px !important;
+      width: 100% !important;
+      object-fit: cover !important;
+    }
+
+    h2 {
+      font-size: 2rem !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+
+    video {
+      height: 220px !important;
+      border-radius: 16px !important;
+    }
+
+    h2 {
+      font-size: 1.7rem !important;
+      line-height: 1.3 !important;
+    }
+
+    section {
+      padding: 70px 16px !important;
+    }
+  }
+`}</style>
       </section>
 
       {/* ===== TESTIMONIALS ===== */}
