@@ -772,10 +772,11 @@ export default function Landing() {
 
       {/* ===== VIDEO SECTION ===== */}
       <section style={{
-        padding: "100px 20px",
-        background: "white",
-        position: "relative"
-      }}>
+  padding: "100px 20px",
+  background: "white",
+  position: "relative",
+  overflow: "hidden"
+}}>
         <motion.div
           animate={{ 
             x: [0, 50, 0],
@@ -890,17 +891,18 @@ export default function Landing() {
   }}
 >
   <video
-    autoPlay
-    loop
-    muted
-    playsInline
-    style={{
-      width: "100%",
-      height: window.innerWidth <= 768 ? "300px" : "500px",
-      objectFit: "cover",
-      display: "block",
-      borderRadius: "20px"
-    }}
+  className="travel-video"
+  autoPlay
+  loop
+  muted
+  playsInline
+  style={{
+  width: "100%",
+  height: "500px",
+  objectFit: "cover",
+  display: "block",
+  borderRadius: "20px"
+}}
   >
     <source src={travelVideo} type="video/mp4" />
   </video>
@@ -917,10 +919,12 @@ export default function Landing() {
       gap: 40px !important;
     }
 
-    video {
-      height: 280px !important;
+    .travel-video {
       width: 100% !important;
+      height: 280px !important;
       object-fit: cover !important;
+      border-radius: 16px !important;
+      display: block !important;
     }
 
     h2 {
@@ -930,18 +934,14 @@ export default function Landing() {
 
   @media (max-width: 480px) {
 
-    video {
+    .travel-video {
       height: 220px !important;
-      border-radius: 16px !important;
+      border-radius: 14px !important;
     }
 
     h2 {
       font-size: 1.7rem !important;
       line-height: 1.3 !important;
-    }
-
-    section {
-      padding: 70px 16px !important;
     }
   }
 `}</style>
