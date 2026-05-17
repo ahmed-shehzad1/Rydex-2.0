@@ -731,57 +731,175 @@ export default function SafeRide() {
         </div>
       </div>
 
-      {/* EDUCATIONAL VIDEOS SECTION */}
-      <div style={{ marginBottom: "50px" }}>
-        <h2 style={{ 
-          color: "#0f5d3e", 
-          fontSize: "26px", 
-          margin: "0 0 24px 0",
-          fontWeight: "700",
-          display: "flex",
-          alignItems: "center",
-          gap: "10px"
-        }}>
-          <Play size={28} color="#1a7a52" /> Safety Educational Videos
-        </h2>
-        <div className="video-grid">
-          <div className="video-card">
-            <div className="video-thumbnail">
-              <div className="play-btn">
-                <Play size={24} color="#1a7a52" fill="#1a7a52" />
-              </div>
-            </div>
-            <div className="video-info">
-              <h4>Personal Safety Essentials</h4>
-              <p>Learn essential safety tips for solo travelers and shared transportation methods</p>
-            </div>
-          </div>
+     {/* ===== EDUCATIONAL VIDEOS SECTION ===== */}
+<div style={{ marginBottom: "50px" }}>
+  <h2 style={{ 
+    color: "#0f5d3e", 
+    fontSize: "26px", 
+    margin: "0 0 24px 0",
+    fontWeight: "700",
+    display: "flex",
+    alignItems: "center",
+    gap: "10px"
+  }}>
+    <Play size={28} color="#1a7a52" /> Safety Educational Videos
+  </h2>
 
-          <div className="video-card">
-            <div className="video-thumbnail">
-              <div className="play-btn">
-                <Play size={24} color="#1a7a52" fill="#1a7a52" />
-              </div>
-            </div>
-            <div className="video-info">
-              <h4>Ride Sharing Safety</h4>
-              <p>Best practices for safe ride sharing including verification and communication tips</p>
-            </div>
-          </div>
+  <div className="video-grid">
 
-          <div className="video-card">
-            <div className="video-thumbnail">
-              <div className="play-btn">
-                <Play size={24} color="#1a7a52" fill="#1a7a52" />
-              </div>
-            </div>
-            <div className="video-info">
-              <h4>Emergency Response Guide</h4>
-              <p>What to do in unexpected situations and how to contact authorities quickly</p>
-            </div>
+    {/* VIDEO 1 */}
+    <a
+      href="https://www.youtube.com/watch?v=8h2Y9b2Q5mY"
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{ textDecoration: "none" }}
+    >
+      <div className="video-card">
+        <div className="video-thumbnail">
+          <div className="play-btn">
+            <Play size={24} color="#1a7a52" fill="#1a7a52" />
           </div>
         </div>
+        <div className="video-info">
+          <h4>Personal Safety Essentials</h4>
+          <p>Learn essential safety tips for solo travelers and shared transportation methods</p>
+        </div>
       </div>
+    </a>
+
+    {/* VIDEO 2 */}
+    <a
+      href="https://www.youtube.com/watch?v=6NaXztStA0Q"
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{ textDecoration: "none" }}
+    >
+      <div className="video-card">
+        <div className="video-thumbnail">
+          <div className="play-btn">
+            <Play size={24} color="#1a7a52" fill="#1a7a52" />
+          </div>
+        </div>
+        <div className="video-info">
+          <h4>Ride Sharing Safety</h4>
+          <p>Best practices for safe ride sharing including verification and communication tips</p>
+        </div>
+      </div>
+    </a>
+
+    {/* VIDEO 3 */}
+    <a
+      href="https://www.youtube.com/watch?v=5fUV9xjEvAg"
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{ textDecoration: "none" }}
+    >
+      <div className="video-card">
+        <div className="video-thumbnail">
+          <div className="play-btn">
+            <Play size={24} color="#1a7a52" fill="#1a7a52" />
+          </div>
+        </div>
+        <div className="video-info">
+          <h4>Emergency Response Guide</h4>
+          <p>What to do in unexpected situations and how to contact authorities quickly</p>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+{/* ===== BLOG SECTION ===== */}
+<div>
+  <h2 style={{ 
+    color: "#0f5d3e", 
+    fontSize: "26px", 
+    margin: "0 0 24px 0",
+    fontWeight: "700",
+    display: "flex",
+    alignItems: "center",
+    gap: "10px"
+  }}>
+    <BookOpen size={28} color="#1a7a52" /> Women's Safety Resources
+  </h2>
+
+  <div className="blog-grid">
+
+    {/* BLOG 1 */}
+    <a
+      href="https://www.unwomen.org/en/news/stories"
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{ textDecoration: "none" }}
+    >
+      <div className="blog-card">
+        <div className="blog-header">
+          <Heart size={40} color="#1a7a52" />
+        </div>
+        <div className="blog-content">
+          <h4>Empowering Women Through Safe Travel</h4>
+          <p>Discover how community-driven platforms are improving women’s transportation safety worldwide.</p>
+        </div>
+      </div>
+    </a>
+
+    {/* BLOG 2 */}
+    <a
+      href="https://www.safecity.in"
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{ textDecoration: "none" }}
+    >
+      <div className="blog-card">
+        <div className="blog-header">
+          <Shield size={40} color="#1a7a52" />
+        </div>
+        <div className="blog-content">
+          <h4>Building Trust in Ride Sharing</h4>
+          <p>Learn how verification systems create safer transportation experiences for women.</p>
+        </div>
+      </div>
+    </a>
+
+    {/* BLOG 3 */}
+    <a
+      href="https://www.who.int/news-room"
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{ textDecoration: "none" }}
+    >
+      <div className="blog-card">
+        <div className="blog-header">
+          <AlertCircle size={40} color="#1a7a52" />
+        </div>
+        <div className="blog-content">
+          <h4>Quick Safety Checklist</h4>
+          <p>A guide to safety measures before, during, and after your ride.</p>
+        </div>
+      </div>
+    </a>
+
+    {/* BLOG 4 */}
+    <a
+      href="https://www.unwomen.org/en"
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{ textDecoration: "none" }}
+    >
+      <div className="blog-card">
+        <div className="blog-header">
+          <Heart size={40} color="#1a7a52" />
+        </div>
+        <div className="blog-content">
+          <h4>Community Stories: Women Drivers</h4>
+          <p>Inspiring stories of women changing transportation and empowering communities.</p>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</div>
 
       {/* BLOG SECTION */}
       <div>
