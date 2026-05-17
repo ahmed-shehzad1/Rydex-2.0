@@ -192,17 +192,123 @@ async function fetchMyRoute() {
           mapStyle="mapbox://styles/mapbox/streets-v11"
           onClick={handleMapClick}
         >
-           {/* DRAFT */}
-           {draftStart && <Source id="s" type="geojson" data={{type:"Feature", geometry:{type:"Point", coordinates:draftStart}}}><Layer id="s-l" type="circle" paint={{"circle-color":"#0b79ff", "circle-radius":8}} /></Source>}
-           {draftDest && <Source id="d" type="geojson" data={{type:"Feature", geometry:{type:"Point", coordinates:draftDest}}}><Layer id="d-l" type="circle" paint={{"circle-color":"#ff5252", "circle-radius":8}} /></Source>}
-           {draftLine.length > 0 && <Source id="r" type="geojson" data={{type:"Feature", geometry:{type:"LineString", coordinates:draftLine}}}><Layer id="r-l" type="line" paint={{"line-color":"#0b79ff", "line-width":4, "line-dasharray":[2,1]}} /></Source>}
+          {/* DRAFT START POINT */}
+{draftStart &&
+ Array.isArray(draftStart) &&
+ draftStart.length === 2 && (
+  <Source
+    id="s"
+    type="geojson"
+    data={{
+      type: "Feature",
+      geometry: {
+        type: "Point",
+        coordinates: draftStart
+      }
+    }}
+  >
+    <Layer
+      id="s-l"
+      type="circle"
+      paint={{
+        "circle-color": "#0b79ff",
+        "circle-radius": 8
+      }}
+    />
+  </Source>
+)}
 
-           {/* SAVED */}
-           {mySavedRoute && mySavedRoute._coords && (
-             <Source id="saved" type="geojson" data={{type:"Feature", geometry:{type:"LineString", coordinates:mySavedRoute._coords}}}>
-                <Layer id="saved-l" type="line" paint={{"line-color":"#10b981", "line-width":6}} />
-             </Source>
-           )}
+{/* DRAFT DESTINATION */}
+{draftDest &&
+ Array.isArray(draftDest) &&
+ draftDest.length === 2 && (
+  <Source
+    id="d"
+    type="geojson"
+    data={{
+      type: "Feature",
+      geometry: {
+        type: "Point",
+        coordinates: draftDest
+      }
+    }}
+  >
+    <Layer
+      id="d-l"
+      type="circle"
+      paint={{
+        "circle-color": "#ff5252",
+        "circle-radius": 8
+      }}
+    />
+  </Source>
+)}
+
+{/* DRAFT ROUTE LINE */}
+{Array.isArray(draftLine) &&
+ draftLine.length > 1 &&
+ draftLine.every(
+   (c) =>
+     Array.isArray(c) &&
+     c.length === 2 &&
+     typeof c[0] === "number" &&
+     typeof c[1] === "number"
+ ) && (
+  <Source
+    id="r"
+    type="geojson"
+    data={{
+      type: "Feature",
+      geometry: {
+        type: "LineString",
+        coordinates: draftLine
+      }
+    }}
+  >
+    <Layer
+      id="r-l"
+      type="line"
+      paint={{
+        "line-color": "#0b79ff",
+        "line-width": 4,
+        "line-dasharray": [2, 1]
+      }}
+    />
+  </Source>
+)}
+
+{/* SAVED ROUTE */}
+{mySavedRoute &&
+ Array.isArray(mySavedRoute._coords) &&
+ mySavedRoute._coords.length > 1 &&
+ mySavedRoute._coords.every(
+   (c) =>
+     Array.isArray(c) &&
+     c.length === 2 &&
+     typeof c[0] === "number" &&
+     typeof c[1] === "number"
+ ) && (
+  <Source
+    id="saved"
+    type="geojson"
+    data={{
+      type: "Feature",
+      geometry: {
+        type: "LineString",
+        coordinates: mySavedRoute._coords
+      }
+    }}
+  >
+    <Layer
+      id="saved-l"
+      type="line"
+      paint={{
+        "line-color": "#10b981",
+        "line-width": 6
+      }}
+    />
+  </Source>
+)}
         </Map>
 
         <div className="ar-controls">
