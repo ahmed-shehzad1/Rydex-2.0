@@ -12,7 +12,8 @@ const allowedOrigins = [
   "http://localhost:5173",
   "http://localhost:5174",
   "http://localhost:3000",
-  "https://rydex-2-0-92fi.vercel.app"
+  "https://rydex-2-0-92fi.vercel.app",
+  "https://rydex-2-0.vercel.app"
 ];
 // Middleware
 app.use(express.json({ limit: "10mb" }));
