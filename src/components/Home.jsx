@@ -109,7 +109,7 @@ export default function Landing() {
         {/* Animated Background Blobs */}
         <motion.div 
           animate={{ 
-            x: [0, 30, 0],
+            y: [0, 30, 0],
             y: [0, -30, 0]
           }}
           transition={{ duration: 8, repeat: Infinity }}
