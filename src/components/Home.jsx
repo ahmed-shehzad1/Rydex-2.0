@@ -87,7 +87,12 @@ export default function Landing() {
   };
 
   return (
-    <div style={{ background: "#ffffff" }}>
+    <div style={{
+  background: "#ffffff",
+  overflowX: "hidden",
+  width: "100%",
+  position: "relative"
+}}>
       
       {/* ===== HERO SECTION ===== */}
       <section style={{
