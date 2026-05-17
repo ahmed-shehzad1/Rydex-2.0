@@ -99,9 +99,9 @@ export default function Landing() {
         position: "relative",
         overflow: "hidden",
         background: "linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 50%, #f9fafb 100%)",
-        paddingTop: "120px",
+        paddingTop: "80px",
         paddingBottom: "100px",
-        minHeight: "100vh",
+        minHeight: "100dvh",
         display: "flex",
         alignItems: "center"
       }}>
