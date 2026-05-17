@@ -67,7 +67,7 @@ async function fetchMyRoute() {
         Array.isArray(coords) && Array.isArray(coords[0])
           ? coords
           : [];
-
+      console.log("SAFE COORDS:", safeCoords);
       setMySavedRoute({ ...r, _coords: safeCoords });
 
       // ✅ SAFE VIEW STATE UPDATE
@@ -184,6 +184,7 @@ async function fetchMyRoute() {
     <div className="ar-root">
       <div className="ar-map-wrap">
         <Map
+          reuseMaps
           ref={mapRef}
           initialViewState={viewState}
           onMove={(e) => setViewState(e.viewState)}
@@ -192,7 +193,7 @@ async function fetchMyRoute() {
           mapStyle="mapbox://styles/mapbox/streets-v11"
           onClick={handleMapClick}
         >
-          {/* DRAFT START POINT */}
+         {/* DRAFT START */}
 {draftStart &&
  Array.isArray(draftStart) &&
  draftStart.length === 2 && (
@@ -218,7 +219,7 @@ async function fetchMyRoute() {
   </Source>
 )}
 
-{/* DRAFT DESTINATION */}
+{/* DRAFT DEST */}
 {draftDest &&
  Array.isArray(draftDest) &&
  draftDest.length === 2 && (
@@ -244,16 +245,10 @@ async function fetchMyRoute() {
   </Source>
 )}
 
-{/* DRAFT ROUTE LINE */}
-{Array.isArray(draftLine) &&
- draftLine.length > 1 &&
- draftLine.every(
-   (c) =>
-     Array.isArray(c) &&
-     c.length === 2 &&
-     typeof c[0] === "number" &&
-     typeof c[1] === "number"
- ) && (
+{/* DRAFT LINE */}
+{draftLine &&
+ Array.isArray(draftLine) &&
+ draftLine.length > 1 && (
   <Source
     id="r"
     type="geojson"
@@ -279,15 +274,9 @@ async function fetchMyRoute() {
 
 {/* SAVED ROUTE */}
 {mySavedRoute &&
+ mySavedRoute._coords &&
  Array.isArray(mySavedRoute._coords) &&
- mySavedRoute._coords.length > 1 &&
- mySavedRoute._coords.every(
-   (c) =>
-     Array.isArray(c) &&
-     c.length === 2 &&
-     typeof c[0] === "number" &&
-     typeof c[1] === "number"
- ) && (
+ mySavedRoute._coords.length > 1 && (
   <Source
     id="saved"
     type="geojson"
