@@ -13,6 +13,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+  outline: 1px solid red;
+}
 
 a {
   font-weight: 500;
