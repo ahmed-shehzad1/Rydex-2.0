@@ -324,3 +324,10 @@
   border-color: var(--green-dark);
   background: var(--green-pale);
 }
+
+.navbar,
+.mobile-menu,
+.nav-menu {
+  z-index: 9999 !important;
+  position: relative;
+}
