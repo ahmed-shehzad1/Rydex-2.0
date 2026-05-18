@@ -16,13 +16,14 @@ export default function Register({ onRegistered }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [captchaToken, setCaptchaToken] = useState("");
   
   const navigate = useNavigate();
   const recaptchaRef = useRef(null);
   const recaptchaPromiseRef = useRef(null);
 
   const DEBUG_VISIBLE_WIDGET = true;
-  const SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITEKEY || import.meta.env.VITE_CAPTCHA_SITE_KEY;
+  const SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
 
   async function submit(e) {
     e.preventDefault();
