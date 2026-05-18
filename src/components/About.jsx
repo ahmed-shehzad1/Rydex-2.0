@@ -1453,7 +1453,7 @@ const About = () => {
         textAlign: 'center',
       }}>
         <p style={{ marginBottom: '8px', fontSize: '14px', fontWeight: '500' }}>
-          © 2025 Travel Matcher. All rights reserved.
+          © 2026 Travel Matcher. All rights reserved.
         </p>
         <p style={{ fontSize: '13px' }}>
           Connecting journeys, building communities.

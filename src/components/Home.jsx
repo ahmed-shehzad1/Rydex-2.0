@@ -1352,7 +1352,7 @@ export default function Landing() {
           fontSize: "0.9rem"
         }}>
           <p style={{ margin: 0 }}>
-            &copy; 2025 Rydex Technologies. All rights reserved. Built for the future of travel in Pakistan.
+            &copy; 2026 Rydex Technologies. All rights reserved. Built for the future of travel in Pakistan.
           </p>
         </div>
       </footer>
